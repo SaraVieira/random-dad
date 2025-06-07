@@ -7,6 +7,12 @@
   animation: fly 10s infinite linear;
 }
 
+@media screen and (max-width: 500px) {
+  .eagle {
+    top: 90px
+  }
+}
+
 @keyframes fly {
   0% {
     transform: translateX(0) rotate(0deg);
