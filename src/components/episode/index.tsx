@@ -8,6 +8,7 @@ export const Episode = ({ episode }: { episode: EpisodeType }) => {
           <div
             className={styles.still}
             style={{
+              ...(episode.images.stills.length > 1 && { marginRight: 50 }),
               backgroundImage: `url(https://image.tmdb.org/t/p/original/${img.file_path})`,
             }}
           ></div>

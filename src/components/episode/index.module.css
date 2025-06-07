@@ -28,13 +28,21 @@
 }
 
 .still {
-  width: 100%;
-  height: 250px;
   background: rgba(255, 255, 255, 0.15);
   border-radius: 15px;
   border: 3px dashed rgba(255, 255, 255, 0.4);
-  margin: auto;
-  background-size: cover;
+  background-size: cover; 
+  scroll-snap-align: start;
+  flex-shrink: 0;
+  width: 100%;
+  height: 250px;
+  transform-origin: center center;
+  position: relative;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 100px;
 }
 
 .episodeCard {
@@ -51,7 +59,33 @@
 }
 
 .stills {
-  height: 250px;
-  overflow: scroll;
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
   margin: 25px 0;
+}
+
+
+.stills::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+.stills::-webkit-scrollbar-thumb {
+  background: black;
+  border-radius: 10px;
+}
+.stills::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+
+@media screen and (max-width: 500px) {
+  .seasonEpisode {
+    font-size: 1.1rem;
+  }
+  .episodeTitle {
+    font-size: 1.8rem;
+  }
 }
